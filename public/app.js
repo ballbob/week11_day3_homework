@@ -43,17 +43,21 @@ var populatePage = function(albums){
     //get your albums div to append to
     var allAlbums = document.getElementById('albums')
 
+    //make your album div
+    var albumDiv = document.createElement('div')
+    albumDiv.id = "album"
+
     //the album name is at...
     //album.name
     var pName = document.createElement('a')
-    pName.innerText = album.name
+    pName.innerText = "Album: " + album.name
     pName.href = album.external_urls.spotify
 
     //the album artists are at...
     //album.artists
     var pArtist = document.createElement('p')
 
-    var allArtistsString = ""
+    var allArtistsString = "Artists: "
 
     album.artists.forEach(function(artist){
       console.log(artist.name)
@@ -79,7 +83,6 @@ var populatePage = function(albums){
     allAlbums.appendChild(br)
   })
 }
-
 
 
 window.onload = app;
