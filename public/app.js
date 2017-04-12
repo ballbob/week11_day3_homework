@@ -1,5 +1,5 @@
 var app = function(){
-  var url = 'https://api.spotify.com/v1/search?q=cats&type=album'
+  var url = 'https://api.spotify.com/v1/search?q=crabs&type=album'
   var textbox = document.querySelector('#search-query')
   var albumlist = document.querySelector('#albums')
 
@@ -45,8 +45,9 @@ var populatePage = function(albums){
 
     //the album name is at...
     //album.name
-    var pName = document.createElement('p')
+    var pName = document.createElement('a')
     pName.innerText = album.name
+    pName.href = album.external_urls.spotify
 
     //the album artists are at...
     //album.artists
@@ -78,5 +79,7 @@ var populatePage = function(albums){
     allAlbums.appendChild(br)
   })
 }
+
+
 
 window.onload = app;
