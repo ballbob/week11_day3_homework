@@ -47,6 +47,7 @@ var populatePage = function(albums){
     //make your individual album div
     var albumDiv = document.createElement('div')
     albumDiv.id = "album"
+    albumDiv.class = "album"
 
     //the album name is at...
     //album.name
