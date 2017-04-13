@@ -38,12 +38,13 @@ var callbackAfterRequestFinished = function(){
 
 var populatePage = function(albums){
   //each item in the URL's albums array is an album represented as a hash
+  //the albums themselves are in albums.albums.items
   
   albums.albums.items.forEach(function(album){
-    //get your albums div to append to
+    //get your all-albums div to append to
     var allAlbums = document.getElementById('albums')
 
-    //make your album div
+    //make your individual album div
     var albumDiv = document.createElement('div')
     albumDiv.id = "album"
 
@@ -70,7 +71,6 @@ var populatePage = function(albums){
     //album.images[1]
     var pImg = document.createElement('img')
     pImg.src = album.images[1].url
-    pImg.width = 200
 
     //now make a break for the point between albums
 
